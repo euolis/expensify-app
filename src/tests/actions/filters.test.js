@@ -25,18 +25,12 @@ test('should generate set end date action object', () => {
 
 test('should generate sort by date action object', () => {
     const action = sortByDate();
-    expect(action).toEqual({
-        type: 'SORT_BY_DATE',
-        sortBy: 'date'
-    });
+    expect(action).toEqual({ type: 'SORT_BY_DATE' });
 });
 
 test('should generate sort by amount action object', () => {
     const action = sortByAmount();
-    expect(action).toEqual({
-        type: 'SORT_BY_AMOUNT',
-        sortBy: 'amount'
-    });
+    expect(action).toEqual({ type: 'SORT_BY_AMOUNT' });
 });
 
 test('should generate set text filter action object with provided values', () => {
