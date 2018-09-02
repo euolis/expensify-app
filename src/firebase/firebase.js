@@ -13,21 +13,68 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().set({
-    name: 'Michael James',
-    age: 27,
-    isSingle: false,
-    location: {
-        city: 'Austin',
-        country: 'United States'
-    }
-});
+export { firebase, database as default };
 
-// database.ref().set('This is my data');
+// child_removed
+// database.ref('expenses').on('child_removed', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val());
+// });
 
-database.ref('age').set(28);
-database.ref('location/city').set('Savannah');
-database.ref('attributes').set({
-    height: '6.4',
-    weight: 235
-});
+// child_changed
+// database.ref('expenses').on('child_changed', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val());
+// });
+
+// child_added
+// database.ref('expenses').on('child_added', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val());
+// });
+
+// database.ref('expenses').on('value', (snapshot) => {
+//     const expenses = [];
+//
+//     snapshot.forEach((childSnapshot) => {
+//         expenses.push({
+//             id: childSnapshot.key,
+//             ...childSnapshot.val()
+//         });
+//     });
+//
+//     console.log(expenses);
+// });
+
+// database.ref('expenses')
+//     .once('value')
+//     .then((snapshot) => {
+//         const expenses = [];
+//
+//         snapshot.forEach((childSnapshot) => {
+//             expenses.push({
+//                 id: childSnapshot.key,
+//                 ...childSnapshot.val()
+//             });
+//         });
+//
+//         console.log(expenses);
+//     });
+
+// database.ref('expenses').push({
+//     description: 'Expense One',
+//     note: 'My first expense',
+//     amount: '2400',
+//     createdAt: 0
+// });
+//
+// database.ref('expenses').push({
+//     description: 'Expense Two',
+//     note: 'My first expense',
+//     amount: '320',
+//     createdAt: 0
+// });
+//
+// database.ref('expenses').push({
+//     description: 'Expense Three',
+//     note: 'My first expense',
+//     amount: '7000',
+//     createdAt: 0
+// });
